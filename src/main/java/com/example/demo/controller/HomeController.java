@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.model.Customer;
+import com.example.demo.model.CustomerDao;
 
 @Controller
 public class HomeController {
@@ -22,9 +23,9 @@ public class HomeController {
 	String myfun1(Model m)
 	{
 		
-		Customer e=new Customer();
+		Customer c=new Customer();
 		
-		m.addAttribute("cus", e);
+		m.addAttribute("cus", c);
 		return "index";
 	}
 	
@@ -33,7 +34,7 @@ public class HomeController {
 	String myfun2(@ModelAttribute("cus") Customer c)
 	{
 		
-		//new EmployeeDao().saveEmployee(e);
+		//new CustomerDao().saveCustomer(c);
 		System.out.println("Data inserted = "+c);
 		return "home";
 	}
